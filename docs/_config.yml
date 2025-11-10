@@ -23,7 +23,7 @@ email: nvsonawane3111@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   A personal Techincal blog site
 baseurl: "/Blog/" # the subpath of your site, e.g. /blog
-url: "https://nasonawa.github.io " # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://nasonawa.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll
 
