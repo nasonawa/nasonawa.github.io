@@ -1,0 +1,42 @@
+---
+layout: default
+---
+<article class="post-block">
+  <div class="post-meta-header">
+    <div class="post-date-wrapper">
+      <span class="hardware-pulse"></span>
+      <span class="post-date">{{ page.date | date: "%B %d, %Y" }}</span>
+    </div>
+    {% if page.read_time %}
+      <div class="post-read-time">
+        <span class="read-icon">⌚</span> {{ page.read_time }} read
+      </div>
+    {% endif %}
+  </div>
+
+  <h1 class="post-title">{{ page.title }}</h1>
+
+  <!-- Stud Tag Display Loops -->
+  {% if page.tags and page.tags.size > 0 %}
+    <div class="post-tags-grid">
+      {% for tag in page.tags %}
+        <span class="block-stud-tag" data-tag="{{ tag | downcase }}">
+          <span class="stud-joint">[■]</span>
+          <span class="tag-name">{{ tag }}</span>
+        </span>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <!-- Core Content Body -->
+  <div class="post-body-markup">
+    {{ content }}
+  </div>
+
+  <!-- Back Navigation Block Button -->
+  <div class="post-action-space">
+    <a href="{{ '/' | relative_url }}" class="return-pipeline-btn">
+      <span class="arrow-symbol">◀</span> RETURN TO PIPELINE (INDEX_INIT)
+    </a>
+  </div>
+</article>

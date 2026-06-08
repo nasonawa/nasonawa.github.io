@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  
+  {% if page.excerpt %}
+    <meta name="description" content="{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}">
+  {% else %}
+    <meta name="description" content="{{ site.description }}">
+  {% endif %}
+
+  <!-- Google Fonts for Inter (body text) & JetBrains Mono (monospaced heading logic) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;750;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+</head>
+<body class="baseplate-bg">
+
+  <!-- Header Header Navigation -->
+  <header class="header-block">
+    <div class="header-container">
+      <a href="{{ '/' | relative_url }}" class="site-logo">
+        <span class="logo-icon">[■]</span> Modular Systems Blog
+      </a>
+      <nav class="nav-links">
+        <a href="{{ '/' | relative_url }}" class="nav-link">Blogs</a>
+        <a href="{{ '/about.html' | relative_url }}" class="nav-link">About</a>
+        <a href="https://github.com" class="nav-link" target="_blank" rel="noopener noreferrer">Infrastructure</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Renderer Container -->
+  <main class="main-container">
+    {{ content }}
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="footer-block">
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="footer-logo">[■] MODULAR systems</div>
+        <p class="footer-tagline">ASSEMBLING SYSTEMS FROM THE BLOCKS UP • STACK TRACES & INFRASTRUCTURE</p>
+      </div>
+      <div class="footer-right">
+        <p class="copyright">{{ 'now' | date: "%Y" }} SYSTEMS ENGINEER. DEPLOYED ON GITHUB PAGES.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

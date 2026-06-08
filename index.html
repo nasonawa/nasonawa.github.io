@@ -1,0 +1,90 @@
+---
+layout: default
+title: Systems Control Center
+---
+
+<!-- Core Professional Hero Block -->
+<section class="hero-block">
+  <div class="hero-tag">SYS_STATUS: V2.6_STABLE [■]</div>
+  <h1 class="hero-title">Building & Maintaining Systems from the Blocks Up.</h1>
+  
+  <p class="hero-bio">
+    I work on building, scaling, and maintaining open source infrastructure and cloud-native systems. With a strong passion for systems engineering, Linux, Kubernetes, and developer tooling, I spend my days solving complex problems at scale.
+  </p>
+
+  <h2 class="hero-about-header">About This Blog</h2>
+  <p class="hero-about-content">
+    This is my personal technical blog where I share real-world experiences, practical insights, and hard-earned lessons from my journey in the software industry.
+  </p>
+
+  <div class="page-body-markup font-body-md" style="margin-bottom: 12px;">
+    <p>Here you'll find:</p>
+    <ul style="list-style-type: none; padding-left: 0; margin-bottom: 24px;">
+      <li style="margin-bottom: 8px; display: flex; align-items: flex-start; gap: 8px;">
+        <span style="color: var(--brick-crimson);">▶</span>
+        <span>Deep technical dives into topics I work with</span>
+      </li>
+      <li style="margin-bottom: 8px; display: flex; align-items: flex-start; gap: 8px;">
+        <span style="color: var(--brick-crimson);">▶</span>
+        <span>Solutions to problems I've encountered in production</span>
+      </li>
+      <li style="margin-bottom: 8px; display: flex; align-items: flex-start; gap: 8px;">
+        <span style="color: var(--brick-crimson);">▶</span>
+        <span>Best practices and productivity tips</span>
+      </li>
+      <li style="margin-bottom: 8px; display: flex; align-items: flex-start; gap: 8px;">
+        <span style="color: var(--brick-crimson);">▶</span>
+        <span>Interesting findings from open source projects</span>
+      </li>
+    </ul>
+    
+    <p class="italic-warning" style="font-style: italic; border-left: 4px solid var(--brick-navy); padding-left: 16px; margin-top: 24px;">
+      My goal is simple: to document what I've learned so that others (including my future self) can benefit from it. No fluff — just honest, practical content from the trenches.
+    </p>
+  </div>
+</section>
+
+<!-- Latest Blogs Section -->
+<section class="section-container">
+  <div class="section-header">
+    <h2 class="section-title">Latest Blogs</h2>
+    <p class="section-subtitle">System logs, deep dives, and production reports</p>
+  </div>
+  
+  <div class="posts-grid">
+    {% for post in site.posts %}
+      <article class="post-card">
+        <div class="post-card-meta">
+          <span>{{ post.date | date: "%B %d, %Y" }}</span>
+          {% if post.read_time %}
+            • <span>{{ post.read_time }}</span>
+          {% endif %}
+        </div>
+        
+        <div class="post-card-title">
+          <h3>{{ post.title }}</h3>
+        </div>
+        
+        <p class="post-card-desc">
+          {{ post.excerpt | strip_html | truncate: 180 }}
+        </p>
+
+        <!-- Stud Tags associated with this specific post inside the index preview -->
+        {% if post.tags %}
+          <div class="post-tags-grid" style="margin-bottom: 16px;">
+            {% for tag in post.tags %}
+              <span class="block-stud-tag" data-tag="{{ tag | downcase }}">
+                <span class="stud-joint">[■]</span>
+                <span class="tag-name">{{ tag }}</span>
+              </span>
+            {% endfor %}
+          </div>
+        {% endif %}
+        
+        <a href="{{ post.url | relative_url }}" class="post-card-link">
+          READ SYSTEM UPDATE <span class="arrow-icon">➔</span>
+        </a>
+      </article>
+    {% endfor %}
+  </div>
+</section>

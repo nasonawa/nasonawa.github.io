@@ -1,0 +1,539 @@
+/*
+  =============================================================================
+  MODULAR SYSTEMS RESEARCH LABS - STYLESHEET
+  Theme: "Sophisticated Lego" (Modern Brutalism, Monospace Grid Alignment)
+  =============================================================================
+*/
+
+:root {
+  /* High contrast Lego block elements palette */
+  --brick-navy: #031f41;
+  --brick-navy-dim: #1d3557;
+  --brick-crimson: #b7102a;
+  --brick-crimson-bright: #db313f;
+  --brick-ochre: #ffdea9;
+  --brick-ochre-dim: #ffba27;
+  
+  --baseplate-offwhite: #f5fafc;
+  --baseplate-slate: #dee3e5;
+  --canvas-pure: #ffffff;
+  --text-primary: #171c1e;
+  --text-muted: #44474e;
+
+  /* Standard brick layout geometries */
+  --outline-solid: 2px solid #031f41;
+  --flat-shadow: 4px 4px 0px 0px #031f41;
+  --flat-shadow-lg: 8px 8px 0px 0px #031f41;
+  --flat-shadow-crimson: 4px 4px 0px 0px #b7102a;
+  --flat-shadow-ochre: 4px 4px 0px 0px #ffba27;
+}
+
+/* Structural Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--text-primary);
+  background-color: var(--baseplate-offwhite);
+  line-height: 1.625;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Baseplate dot pattern background */
+.baseplate-bg {
+  background-image: radial-gradient(var(--baseplate-slate) 2px, transparent 2px);
+  background-size: 24px 24px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Typography pairings: JetBrains Mono for system layout & headings; Inter for body readings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "JetBrains Mono", "SF Mono", Fira Code, monospace;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--brick-navy);
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+}
+
+a {
+  color: var(--brick-crimson);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.12s ease-in-out;
+}
+
+a:hover {
+  color: var(--brick-crimson-bright);
+  text-decoration: underline;
+}
+
+/* Sticky Solid Block Header Navigation */
+.header-block {
+  background-color: var(--canvas-pure);
+  border-bottom: var(--outline-solid);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 16px 24px;
+  box-shadow: 0px 4px 0px 0px var(--brick-navy);
+}
+
+.header-container {
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-logo {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--brick-navy);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.site-logo:hover {
+  text-decoration: none;
+}
+
+.logo-icon {
+  color: var(--brick-crimson);
+}
+
+.nav-links {
+  display: flex;
+  gap: 16px;
+}
+
+.nav-link {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text-primary);
+  padding: 6px 12px;
+  border: 2px solid transparent;
+}
+
+.nav-link:hover {
+  text-decoration: none;
+  border: var(--outline-solid);
+  background-color: var(--baseplate-offwhite);
+  box-shadow: 2px 2px 0px 0px var(--brick-navy);
+}
+
+/* Main Container */
+.main-container {
+  max-width: 1024px;
+  width: 100%;
+  margin: 48px auto;
+  padding: 0 24px;
+  flex-grow: 1;
+}
+
+/* Grid & Layout Units */
+.hero-block {
+  background-color: var(--canvas-pure);
+  border: var(--outline-solid);
+  padding: 40px;
+  margin-bottom: 48px;
+  box-shadow: var(--flat-shadow-lg);
+  position: relative;
+}
+
+.hero-tag {
+  display: inline-block;
+  background-color: var(--brick-ochre-dim);
+  color: var(--brick-navy);
+  border: var(--outline-solid);
+  padding: 4px 10px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.hero-title {
+  font-size: 36px;
+  color: var(--brick-navy);
+  margin-bottom: 20px;
+}
+
+.hero-bio {
+  font-size: 16px;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.hero-about-header {
+  font-size: 22px;
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+
+.hero-about-content {
+  font-size: 15px;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+/* Standard Section Dividers left line headers */
+.section-header {
+  border-left: 6px solid var(--brick-crimson);
+  padding-left: 16px;
+  margin-bottom: 32px;
+}
+
+.section-title {
+  font-size: 22px;
+  text-transform: uppercase;
+}
+
+.section-subtitle {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* Article Lists */
+.posts-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 56px;
+}
+
+.post-card {
+  background-color: var(--canvas-pure);
+  border: var(--outline-solid);
+  padding: 24px;
+  box-shadow: var(--flat-shadow);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.post-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 7px 7px 0px 0px var(--brick-navy);
+}
+
+.post-card-meta {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.post-card-title h3 {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.post-card-desc {
+  font-size: 15px;
+  color: var(--text-muted);
+}
+
+.post-card-link {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--brick-crimson);
+  font-weight: 750;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+  margin-top: 8px;
+}
+
+.post-card-link:hover {
+  text-decoration: underline;
+}
+
+/* Post view specifics */
+.post-block {
+  background-color: var(--canvas-pure);
+  border: var(--outline-solid);
+  padding: 40px;
+  box-shadow: var(--flat-shadow-lg);
+  margin-bottom: 48px;
+}
+
+.post-meta-header {
+  display: flex;
+  justify-content: space-between;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  margin-bottom: 16px;
+}
+
+.post-date-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hardware-pulse {
+  width: 8px;
+  height: 8px;
+  background-color: var(--brick-crimson);
+}
+
+.post-title {
+  font-size: 32px;
+  margin-bottom: 24px;
+  color: var(--brick-navy);
+}
+
+/* Stud Stud Tag Grid & Badges representing physical block joints */
+.post-tags-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.block-stud-tag {
+  display: inline-flex;
+  border: var(--outline-solid);
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 750;
+  font-size: 11px;
+}
+
+.stud-joint {
+  background-color: var(--brick-navy);
+  color: var(--canvas-pure);
+  padding: 4px 8px;
+}
+
+.tag-name {
+  background-color: var(--baseplate-slate);
+  color: var(--brick-navy);
+  padding: 4px 12px;
+  text-transform: uppercase;
+}
+
+/* Stud Joint Category Styling Color overrides */
+.block-stud-tag[data-tag="kubernetes"] .tag-name {
+  background-color: var(--brick-navy-dim);
+  color: var(--canvas-pure);
+}
+
+.block-stud-tag[data-tag="go"] .tag-name {
+  background-color: #22d3ee;
+  color: #083344;
+}
+
+.block-stud-tag[data-tag="rust"] .tag-name {
+  background-color: var(--brick-ochre-dim);
+  color: #2c1c00;
+}
+
+.block-stud-tag[data-tag="linux"] .tag-name {
+  background-color: var(--brick-crimson);
+  color: var(--canvas-pure);
+}
+
+.block-stud-tag[data-tag="systems"] .tag-name {
+  background-color: #eab308;
+  color: #3f2000;
+}
+
+.block-stud-tag[data-tag="reliability"] .tag-name {
+  background-color: #22c55e;
+  color: #022c22;
+}
+
+/* Post Markup Content block elements */
+.post-body-markup, .page-body-markup {
+  font-size: 16px;
+  color: var(--text-primary);
+}
+
+.post-body-markup p, .page-body-markup p {
+  margin-bottom: 20px;
+  line-height: 1.65;
+}
+
+.post-body-markup h2, .page-body-markup h2 {
+  font-size: 22px;
+  margin-top: 36px;
+  margin-bottom: 16px;
+  border-bottom: var(--outline-solid);
+  padding-bottom: 8px;
+}
+
+.post-body-markup h3, .page-body-markup h3 {
+  font-size: 18px;
+  margin-top: 28px;
+  margin-bottom: 12px;
+}
+
+/* Code Syntax Blocks */
+pre.highlight, pre {
+  background-color: var(--brick-navy-dim);
+  color: #f8fafc;
+  border: var(--outline-solid);
+  padding: 18px;
+  overflow-x: auto;
+  margin: 24px 0;
+  box-shadow: 4px 4px 0px 0px var(--brick-navy);
+}
+
+pre code, code {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13.5px;
+}
+
+code {
+  background-color: rgba(3, 31, 65, 0.06);
+  padding: 2px 6px;
+  border: 1px solid rgba(3, 31, 65, 0.1);
+}
+
+pre code {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+/* Yellow warning alert container box mimicking an interlocking Warning Lego tile */
+.warning-stud-alert {
+  background-color: #fef08a; /* Soft Warn Yellow */
+  border: var(--outline-solid);
+  padding: 20px;
+  margin: 32px 0;
+  box-shadow: var(--flat-shadow-ochre);
+}
+
+.warning-stud-alert h4 {
+  color: #713f12;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.warning-stud-alert p {
+  color: #713f12;
+  font-size: 14.5px;
+  margin-bottom: 0 !important;
+}
+
+.block-divider {
+  border: none;
+  border-top: var(--outline-solid);
+  margin: 24px 0;
+}
+
+/* Return pipelines back page button */
+.post-action-space {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: var(--outline-solid);
+}
+
+.return-pipeline-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--canvas-pure);
+  border: var(--outline-solid);
+  padding: 12px 20px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--brick-navy);
+  box-shadow: var(--flat-shadow);
+}
+
+.return-pipeline-btn:hover {
+  text-decoration: none;
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px var(--brick-navy);
+}
+
+/* Standalone Static Pages Layout details */
+.page-block {
+  background-color: var(--canvas-pure);
+  border: var(--outline-solid);
+  padding: 40px;
+  box-shadow: var(--flat-shadow-lg);
+  margin-bottom: 48px;
+}
+
+.page-subtitle-descr {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-top: 8px;
+}
+
+/* System Footers */
+.footer-block {
+  background-color: var(--brick-navy-dim);
+  color: var(--canvas-pure);
+  border-top: var(--outline-solid);
+  padding: 48px 24px;
+}
+
+.footer-container {
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.footer-logo {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 800;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.footer-tagline {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  color: #94a3b8;
+  letter-spacing: 0.05em;
+}
+
+.copyright {
+  font-size: 12px;
+  color: #cbd5e1;
+}
+
+/* Responsiveness adjustments */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .footer-container {
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    text-align: center;
+  }
+  .post-title {
+    font-size: 26px;
+  }
+}

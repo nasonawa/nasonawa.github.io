@@ -1,0 +1,13 @@
+---
+layout: default
+---
+<article class="page-block">
+  <h1 class="page-title">{{ page.title }}</h1>
+  {% if page.subtitle %}
+    <p class="page-subtitle-descr">{{ page.subtitle }}</p>
+  {% endif %}
+  <hr class="block-divider">
+  <div class="page-body-markup">
+    {{ content }}
+  </div>
+</article>
